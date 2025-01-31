@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('courts', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('court_id')->constrained();
+            $table->foreignId('court_type_id')->constrained();
             $table->text('name');
             $table->integer('price');
             $table->timestamps();
