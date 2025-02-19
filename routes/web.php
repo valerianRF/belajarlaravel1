@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\court_typesController;
+use App\Http\Controllers\courtsController;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -44,3 +47,10 @@ Route::get('/ms', function() {
 Route::get('/homee', function() {
     return view('homee');
 });
+
+Route::get('/court_types', [court_typesController::class, 'index']);
+Route::post('/court_types', [court_typesController::class, 'store']);
+
+Route::resource('court', courtsController::class);
+
+?>
